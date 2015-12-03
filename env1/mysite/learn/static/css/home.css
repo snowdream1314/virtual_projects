@@ -249,32 +249,44 @@ th {
 }
 
 /*---------------------返回顶部按钮-------------------*/
+#backTotop {
+    position: fixed;
+    right: 100px;
+    display: block;
+    
+}
 #top {
 	position: fixed;
-	right: 25px;
-	bottom: 10px;
+	/* right: 25px; */
+    /* left: 1450px; */       /*相对于浏览器窗口左侧*/
+	bottom: 120px;      /*相对于浏览器窗口底部*/
 	width: 60px;
 	height: 60px;
-	background-color: #bbb;
-	border-radius:7px;
-	opacity: 0.8;
-	display: none;
+	/* background-color: #bbb; */
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+	border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+	/* opacity: 0.8; */
+	display: block;
 	z-index: 999;
 }
-#top .arrow{
+#top .arrow{    /*制作三角形*/
 	margin:0 auto;
 	padding-top:11px;
 	width:0;
-	height: 0;
-	border-right: 15px solid transparent;
+	height: 0;  /*定位到中心*/
+	border-right: 15px solid transparent;   /*三角形的三条边*/
 	border-left: 15px solid transparent; 
 	border-bottom: 15px solid #7f7f7f;
 }
-#top .stick{
-	margin:0 auto;
-	padding-bottom:21px;
-	width: 13px;
-	border-bottom: 13px solid #bbb;
+#top .stick{    /*制作矩形*/
+	margin:0 auto;  /*和三角形贴上*/
+	padding-bottom:21px;    /*离开top底部距离*/
+	width: 13px;    /*矩形宽*/
+	/* border-bottom: 13px solid #bbb; */
 	background-color: #7f7f7f;
 }
 /* #top :hover{
@@ -284,6 +296,35 @@ th {
     background-color : #FFF;
 } */
 
+#suggest {
+    position: fixed;
+	/* right: 25px; */
+    /* left: 1450px;  */      /*相对于浏览器窗口左侧*/
+	bottom: 60px;      /*相对于浏览器窗口底部*/
+	width: 60px;
+	height: 60px;
+    font-size: 25px;
+    text-align: center;
+	/* background-color: #bbb; */
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    /* border-top: 1px solid #CCC; */
+	border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+	/* opacity: 0.8; */
+	display: block;
+	z-index: 999;
+    
+}
+#suggest a {    
+    padding:auto;
+    text-decoration: none;
+}
+#suggest :hover {
+    background-color: #FF0000;
+}
 /*---------------------热词部分-----------------------*/ 
  .menu {
         position:relative;

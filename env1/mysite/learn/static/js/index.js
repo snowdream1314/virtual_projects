@@ -49,9 +49,9 @@ function backToTop() {
     //滚页面才显示返回顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
-            $("#top").fadeIn(500);
+            $("#backTotop").fadeIn(500);
         } else {
-            $("#top").fadeOut(500);
+            $("#backTotop").fadeOut(500);
         }
     });
     //点击回到顶部
@@ -67,7 +67,7 @@ function backToTop() {
     });
 }
 
-/*-------------------------------------*/
+/*-------------------热词------------------*/
 
 var hotWords = [{name:"value1"},{name:"value2"},{name:"value3"}];
 var selectedLiId ; //被选中的li的id

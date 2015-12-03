@@ -2,13 +2,13 @@
     position:fixed;
     top: 0;
     width:100%;
-    z-index: 999;
+    z-index: 888;
 }
 #footer {      /*footer定位在浏览器底部*/
     position:fixed;
     bottom: 0;
     width:100%;
-    z-index: 999;
+    z-index: 888;
 }
 #navig, #navig ul {
     margin:0;
@@ -41,8 +41,8 @@
     text-decoration: none;  /*去掉了下划线*/
     text-shadow: 0 1px 0 #000;  /*字体阴影：右、下、颜色变淡、颜色*/
 }
-#navig a:hover {
-	color: #111;
+#navig a:hover {    /*鼠标滑过时变化*/
+	color: #FFF;
     text-decoration:underline;
 }
 
