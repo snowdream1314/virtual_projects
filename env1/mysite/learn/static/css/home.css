@@ -7,7 +7,7 @@ body,p,form,ul,li{margin:0;padding:0;list-style:none}
 
 input{border:0;padding:0}
 
-/*-----------按钮和输入框----------*/
+/*------------------------------------------按钮和输入框-------------------------------------*/
  .ipt_wr { 
       
         height:34px;
@@ -62,7 +62,10 @@ input{border:0;padding:0}
         right:25%;
         left:25%;
     } 
+/*------------------------------------------按钮和输入框-------------------------------------*/
 
+
+/*------------------------------------------网页主要内容-------------------------------------*/
 /*----------------------登录和注册---------------------*/  
 /*  .login {
         position: absolute;
@@ -82,7 +85,7 @@ input{border:0;padding:0}
    /*  bottom: 60px; */
     height: auto;   /*高度随着内容变化*/
     width: 1212px;
-    margin: 0 0 60px 0; /*离开浏览器窗口底部距离60px*/
+    margin: 0 0 300px 0; /*离开浏览器窗口底部距离300px,,留出footer空间*/
 }
 /*------------------------统计条目数----------------------*/
 .nums {  
@@ -248,7 +251,10 @@ th {
     padding: 9px 13px; 
 }
 
-/*---------------------返回顶部按钮-------------------*/
+/*------------------------------------------网页主要内容-------------------------------------*/
+
+
+/*------------------------------------------返回顶部按钮------------------------------------*/
 #backTotop {
     position: fixed;
     right: 100px;
@@ -259,7 +265,7 @@ th {
 	position: fixed;
 	/* right: 25px; */
     /* left: 1450px; */       /*相对于浏览器窗口左侧*/
-	bottom: 120px;      /*相对于浏览器窗口底部*/
+	bottom: 360px;      /*相对于浏览器窗口底部*/
 	width: 60px;
 	height: 60px;
 	/* background-color: #bbb; */
@@ -300,7 +306,7 @@ th {
     position: fixed;
 	/* right: 25px; */
     /* left: 1450px;  */      /*相对于浏览器窗口左侧*/
-	bottom: 60px;      /*相对于浏览器窗口底部*/
+	bottom: 300px;      /*相对于浏览器窗口底部*/
 	width: 60px;
 	height: 60px;
     font-size: 25px;
@@ -325,6 +331,51 @@ th {
 #suggest :hover {
     background-color: #FF0000;
 }
+/*------------------------------------------返回顶部按钮------------------------------------*/
+
+
+/*------------------------------------------网页footer部分----------------------------------*/ 
+#footer {
+    position: relative;
+    height: 300px;
+    width:100%;
+    background-color: #333;
+}
+.footer {
+    position: relative;
+    left: 150px;
+}
+.footer a {
+    font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    color: #CCC;
+    text-decoration: none;
+}
+.footer-top {
+    margin: 40px 0 20px 0;
+}
+.footer-top a {
+    margin: 0 50px 0 0;
+}
+.friendly-link {
+    margin: 50px 0 50px 0;
+}
+.link-title {
+    margin: 20px 0 15px 0;
+    font: bold 13px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    color: #FFF;
+}
+.friendly-link ul li {
+    float: left;
+    margin: 0 50px 20px 0;
+}
+.copy-right {
+    margin: auto;
+    font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    color: #CCC;
+}
+/*------------------------------------------网页footer部分----------------------------------*/ 
+
+
 /*---------------------热词部分-----------------------*/ 
  .menu {
         position:relative;
