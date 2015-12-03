@@ -12,8 +12,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, render_to_response
 from django.template.context import RequestContext
 
-from learn.models import smzdm_fx
-
+# from learn.models import smzdm_fx
+from learn.models import smzdm_fx_item
 
 # Create your views here.
 # def index(request):
@@ -35,8 +35,8 @@ def home(request):
 def show(request):
     
     #使用paginator实现分页
-    limit = 7  #限制每页显示的记录数
-    items = smzdm_fx.objects(itemid__gt=705000).limit(30)
+    limit = 25  #限制每页显示的记录数
+    items = smzdm_fx_item.objects(itemid__gt=705000).limit(30)
     paginator = Paginator(items, limit) #实例化一个分页对象
     page = request.GET.get('page')  #获取页码
     try:

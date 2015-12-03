@@ -79,14 +79,16 @@ input{border:0;padding:0}
 #container {
     position:absolute;  /*相对于浏览器窗口定位*/
     top: 70px;  /*与header之间空10px*/
-    height: 1490px;
+   /*  bottom: 60px; */
+    height: auto;   /*高度随着内容变化*/
     width: 1212px;
+    margin: 0 0 60px 0; /*离开浏览器窗口底部距离60px*/
 }
 /*------------------------统计条目数----------------------*/
 .nums {  
     height: 42px;
     width: 538px;
-    padding: 0 0 0 112px;
+    padding: 0 0 0 150px;   /*偏移窗口左侧距离*/
     margin: 32px 0 10px 0;
     font: bold 10px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
     color: #CCC;
@@ -103,7 +105,7 @@ input{border:0;padding:0}
 /*------------------------右侧推荐----------------------*/
 .content_right {
     position:absolute;
-    right:20px;
+    right:0;
     top: 104px;  /*相对于#container定位*/
     padding: 0 0 0 10px;
     border-left: 1px solid #CCC; /*边框*/
@@ -113,18 +115,22 @@ input{border:0;padding:0}
 .content_left {  
     position: relative;
     width: 549px;
-    padding: 0 0 0 112px;
+    height: auto;
+    padding: 0 0 0 150px;   /*偏移窗口左侧距离*/
 }
 
 li.itemList {
     position: relative;
-    /* height: 85px; */     /*高度不能固定死，否则容易重叠*/
-    width: 538px;
-    margin: 30px 0 30px 0;
+    height: 260px;    /*高度不能固定死，否则容易重叠*/
+    width: 710px;
+    margin: 15px 0 15px 0;
+    padding: 0 0 15px 0;    /*条目之间距离*/
+    border-bottom: 1px solid #CCC; /*边框*/
 }
 .itemName {     /*标题*/
+    position: relative;
     height: 20px;
-    width: 700px;
+    width: 710px;
     white-space: nowrap; /*禁止换行*/
     overflow:hidden; /*超出范围隐藏*/
     text-overflow:ellipsis; /*超出范围显示省略号*/
@@ -134,17 +140,20 @@ li.itemList {
     width: 483px;
     padding: 0;
     margin: 0;
-    font: bold 15px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
+    font: bold 18px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
 }
 
 .img {      /*图片*/
-    width: 80px;
-    height: 90px;
+    
+    width: 190px;
+    /* height: 190px; */
     float: left;
     padding: 0 15px 0 0;    /*把图片推离文字*/
 }
 
 .itemRight {
+    position: relative;
+    height: 190px;
     width: 430px;
     margin: auto;   /*实现左对齐*/
 }
@@ -152,30 +161,45 @@ li.itemList {
     height: 24px;
     margin: 0 5px 0 0;
     color: #CC6600;
+    font: bold 18px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
 }
 
 .lable{
     position: relative;
     height: 19px;
-    margin: 10px 0 0 0;
+    margin: 20px 0 20px 0;
 }
 .itemTime {
     float: right;
 }
 
+.itemDetail {
+    height: 96px;
+    width: 500px;
+    font: normal 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
+    overflow:hidden; /*超出范围隐藏*/
+    text-overflow:ellipsis; /*超出范围显示省略号*/
+}
+.itemBuy {
+    margin: 20px 0 20px 0;
+    
+}
 .buyPart{
+    position: relative;
     float: right;
 }
 /*------------------------相关搜索----------------------*/
 #relate_result {
-    position: absolute;
+    position: relative;
     height: 104px;
     width: 600px;
-    bottom: 200px;
+    /* bottom: 60px; */   /*距离container的底部*/
+    bottom: 0;      /*相对于content_left底部*/
     left: 0;
-    padding: 0 0 0 112px;
+   /*  padding: 0 0 0 150px;  */  /*偏移窗口左侧距离*/
+    padding: 0; /*偏移content_left左侧距离*/
     line-height：104px;
-    margin: 5px 0 0 0;
+    margin: 20px 0 0 0;     /*推离itemlist*/
     /* text-decoration: none; */
     font: bold 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/    
 }
@@ -188,12 +212,14 @@ th {
 }
 /*--------------------------分页------------------------*/
 #page {
-    position: absolute;
-    bottom: 60px;
+    position: relative; /*设置为相对定位后就惠跟着条目往下移*/
+    /* bottom: 60px; */   /*相对于container底部*/
+    bottom: 0;      /*相对于content_left底部*/
     height: 66px;
     width: 1100px;
-    padding: 0 0 0 112px;
-    margin: 32px 0 40px 0;
+    /* padding: 0 0 0 150px; */   /*偏移窗口左侧距离*/
+    padding: 0; /*偏移content_left左侧距离*/  /*整体偏移窗口左侧由content_left定义*/
+    margin: 20px 0 0 0;     /*和footer的位置由container定义*/
     font: bold 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
 }
 #page a {
@@ -233,7 +259,7 @@ th {
 	border-radius:7px;
 	opacity: 0.8;
 	display: none;
-	z-index: 888;
+	z-index: 999;
 }
 #top .arrow{
 	margin:0 auto;

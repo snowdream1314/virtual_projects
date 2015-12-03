@@ -24,9 +24,9 @@
                 <span class="price">{{ item.price }}</span>
                 <div class="lable">
                     <span class="itemTab"><a href="">分类</a></span>
-                    <span class="itemTime">{{ item.updatetime }}</span>
+                    <span class="itemTime">{{ item.article_time }}</span>
                 </div>
-                <div class="itemDetail"><p>{{ item.item_description }}</p>
+                <div class="itemDetail">{{ item.item_description }}
                     <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a>
                 </div>
                 <div class="itemBuy">
@@ -48,6 +48,56 @@
         </li>
             
         {% endfor %}
+        <!-- 相关搜索 -->
+        <div id="relate_result">
+            <div class="rr_title">相关搜索1</div>
+            <table >
+                <tbody>
+                    <tr>
+                        <th><a href="">相关搜索1</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索1</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索1</a></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th><a href="">相关搜索2</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索2</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索2</a></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th><a href="">相关搜索3</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索3</a></th>
+                        <td></td>
+                        <th><a href="">相关搜索3</a></th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 使用django的paginator实现分页显示方式 -->
+        <div id="page">
+        {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}" class="n"><上一页</a>
+        {% endif %}
+        {% for page_number in page_range %}
+        {% ifequal page_number  items.number %}
+            <a href="?page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="active">{{ page_number }}</span></a>
+        {% else %}
+            <a href="?page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
+        {% endifequal %}
+        {% endfor %}
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}" class="n" title="Next">下一页></a>
+        {% endif %}  
+            <b>{%if items.paginator.num_pages%}共 {{ items.paginator.num_pages }} 页{%endif%}</b>
+        </div>
     </div>
     <div class="content_right">
         <div class="rr_title">相关搜索2</div>
@@ -80,56 +130,7 @@
             </tbody>
         </table>
     </div>
-    <!-- 相关搜索 -->
-    <div id="relate_result">
-        <div class="rr_title">相关搜索1</div>
-        <table >
-            <tbody>
-                <tr>
-                    <th><a href="">相关搜索1</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索1</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索1</a></th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th><a href="">相关搜索2</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索2</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索2</a></th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th><a href="">相关搜索3</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索3</a></th>
-                    <td></td>
-                    <th><a href="">相关搜索3</a></th>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- 使用django的paginator实现分页显示方式 -->
-    <div id="page">
-    {% if items.has_previous %}
-        <a href="?page={{ items.previous_page_number }}" class="n"><上一页</a>
-    {% endif %}
-    {% for page_number in page_range %}
-    {% ifequal page_number  items.number %}
-        <a href="?page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="active">{{ page_number }}</span></a>
-    {% else %}
-        <a href="?page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
-    {% endifequal %}
-    {% endfor %}
-    {% if items.has_next %}
-        <a href="?page={{ items.next_page_number }}" class="n" title="Next">下一页></a>
-    {% endif %}  
-        <b>{%if items.paginator.num_pages%}共 {{ items.paginator.num_pages }} 页{%endif%}</b>
-    </div>
+    
 </div>
     <!-- 另一种分页显示方式 -->
     <!-- <p>
@@ -164,10 +165,24 @@
     <div class="stick"></div>
   </a>
 </div>
-<!-- <div id="top">
-    <a href="#top" target="_self">返回顶部</a>
-</div> -->
 
+
+<!-- footer -->
+<div id="footer">
+    <ul id="navig">
+        <li><a href="#">Home</a></li>
+        <li class="input_ls">
+            <span class="item_input">
+               <span class="ipt_wr"><input type="text" id="search_input" class="ipt" autocomplete="off"  onkeydown="return Entpress(event);" /></span><span class="btn_wr"><input id="search_btn" class="btn" type="button" value='百度一下' onclick=javascript:jump() /></span>
+            </span>
+        </li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li id="login"><a href="#">登录</a></li>
+        <li id="register"><a href="#">注册</a></li>
+    </ul>
+</div>
 
 </body>
 

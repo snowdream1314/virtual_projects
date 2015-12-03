@@ -6,7 +6,7 @@ from mysite.settings import DBNAME
 
 # from mongoengine import connect
 # Create your models here.
-connect(DBNAME, host='localhost', port=27017)
+connect('smzdm', host='localhost', port=27017)
 
 # class smzdm_fx(Document):
 #     itemid = Item.itemid
@@ -23,7 +23,7 @@ connect(DBNAME, host='localhost', port=27017)
 #     def createItemdic(self, dict2):
 #         return Item.createItemdic(self, dict2)
 
-class smzdm_fx(Document):
+class smzdm_fx_item(Document):
     itemid = IntField()
     categoryid = IntField()
     name = StringField()
@@ -39,6 +39,11 @@ class smzdm_fx(Document):
     comment_count = IntField()
     good_count = IntField()
     fav_count = IntField()
+    article_time = StringField()
+    item_description = StringField()
+    article_url = StringField()
+    youhui_content = StringField()
+    baoliao_content = StringField()
     
 
 

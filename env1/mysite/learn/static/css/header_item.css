@@ -2,6 +2,13 @@
     position:fixed;
     top: 0;
     width:100%;
+    z-index: 999;
+}
+#footer {      /*footer定位在浏览器底部*/
+    position:fixed;
+    bottom: 0;
+    width:100%;
+    z-index: 999;
 }
 #navig, #navig ul {
     margin:0;
@@ -14,7 +21,7 @@
     height: 60px;
     margin: 0 auto;
    /*  border: 1px solid #222;  /*边框*/ */
-    /* background-color: #FFF;  /*背景颜色*/ */
+    background-color: #FFF;  /*背景颜色*/
     background-image: linear-gradient(#444, #111);
     border-radius: 1px; /*边框圆弧*/
     box-shadow: 0 1px 1px #777; /*边框阴影*/
