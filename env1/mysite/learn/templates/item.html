@@ -27,12 +27,13 @@
                     <span class="itemTime">{{ item.article_time }}</span>
                 </div>
                 <div class="itemDetail">
+                    
                 {% if item.baoliao_content %}
-                    <p>{{ item.baoliao_content }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                    <p>{{ item.baoliao_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
                 {% elif item.item_description%}
-                    <p>{{ item.item_description }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                    <p>{{ item.item_description }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
                 {% else %}
-                    <p>{{ item.youhui_content }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                    <p>{{ item.youhui_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
                 {% endif %}
                    
                 </div>

@@ -194,20 +194,74 @@ li.itemList {
 /*     width:500px; */
 /*     line-height: 20px; */
     margin-bottom: 5px;
+    text-decoration: none;
     overflow:hidden; /*超出范围隐藏*/
     text-overflow:ellipsis; /*超出范围显示省略号*/
 }
+.itemDetail a {
+    text-decoration: none;
+}
 .itemBuy {
-    padding-top: 10px;
+    padding-top: 15px;
     margin: auto;
     
 }
 .itemBuy a {
+    letter-spacing: 1px;
     text-decoration: none;
+}
+.good { 
+    color: #f04848;
+}
+.bad {
+    color: #ccc;
+}
+.fav {
+    color: #ccc;
+}
+.good span,.bad span {
+    
+  
+}
+.good,.bad {
+    width:58px;
+    height: 30px;
+    padding: 6px;
+    margin-right: 10px; 
+    font-size: 14px;
+    line-height:30px;  
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /* background-color: #fff; */    
+}
+.good:hover,.bad:hover {
+    background-color: #f04848;
+    color: #fff;
+    border: 1px solid #f04848;
 }
 .buyPart{
     position: relative;
     float: right;
+}
+.buyPart a {
+    margin-right: 0;
+    width: 79px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 8px 21px 8px 21px;
+}
+.store {
+    margin-right: 10px;
+    color: #5188a6;
+}
+.buyLink {
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f04848;
 }
 /*------------------------相关搜索----------------------*/
 #relate_result {
@@ -277,7 +331,7 @@ th {
     position: fixed;
     right: 5%;      /*距离窗口右侧位置*/
     bottom: 0;   /*距离窗口底部位置*/
-    display: none;
+    /* display: none; */
     z-index: 999;
 }
 #top {

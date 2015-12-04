@@ -49,7 +49,7 @@ function backToTop() {
     //滚页面才显示返回顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
-           /*  alert('检测到滚动') */
+           /* alert('检测到滚动') */
             /* $("#backTotop").animate({display: "block"}); */
             $("#backTotop").fadeIn(500);
         } else {
@@ -69,6 +69,10 @@ function backToTop() {
     });
 }
 
+/*------------------加载图片----------------*/
+function addImg(){
+    var
+}
 /*-------------------热词------------------*/
 
 var hotWords = [{name:"value1"},{name:"value2"},{name:"value3"}];
