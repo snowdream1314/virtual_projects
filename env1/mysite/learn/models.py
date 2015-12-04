@@ -40,10 +40,10 @@ class smzdm_fx_item(Document):
     good_count = IntField()
     fav_count = IntField()
     article_time = StringField()
-    item_description = StringField()
     article_url = StringField()
-    youhui_content = StringField()
-    baoliao_content = StringField()
+    item_description = StringField(max_length=30)
+    youhui_content = StringField(max_length=30)
+    baoliao_content = StringField(max_length=30)
     
 
 

@@ -14,7 +14,7 @@
     <!--结果列表-->
     <div class="content_left">
         {% for item in items.object_list %}
-        <li class="itemList">
+        <li class="itemList" id="{{ item.itemid }}" time="{{ item.updatetime }}">
             <div class="itemTitle">
                 <!-- <a class="located" href="">国内</a> -->
                 <h3 class="itemName"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></h3>
@@ -26,8 +26,15 @@
                     <span class="itemTab"><a href="">分类</a></span>
                     <span class="itemTime">{{ item.article_time }}</span>
                 </div>
-                <div class="itemDetail">{{ item.item_description }}
-                    <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a>
+                <div class="itemDetail">
+                {% if item.baoliao_content %}
+                    <p>{{ item.baoliao_content }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                {% elif item.item_description%}
+                    <p>{{ item.item_description }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                {% else %}
+                    <p>{{ item.youhui_content }} <a href="{{ item.article_url }}" target="_blank" class="buyLink">详情</a></p>
+                {% endif %}
+                   
                 </div>
                 <div class="itemBuy">
                     <a id="worthy" href="" onclick="" class="good">
@@ -41,7 +48,7 @@
                     </a>
                     <div class="buyPart">                    
                         <a href="" target="_blank" class="store">{{ item.originmall }}</a>
-                         <a href="{{ item.href }}" target="_blank" class="buyLink">购买链接</a>
+                        <a href="{{ item.href }}" target="_blank" class="buyLink">购买链接</a>
                     </div>   
                 </div>  
             </div>
@@ -131,6 +138,28 @@
         </table>
     </div>
     
+    <!-- <footer id="footer"> -->
+    <!-- navbar -->
+    <div class="footer">
+        <div class="footer-top">
+            <a href="" target="_blank">关于我们</a>
+            <a href="" target="_blank">联系我们</a>
+        </div>
+        <div class="friendly-link">
+            <div class="link-title">
+                友情链接
+                <span>(<a href="" target="_blank">申请</a>)</span>
+            </div>
+            <ul>
+                <li><a href="" target="_blank">链接1</a></li>
+                <li><a href="" target="_blank">链接2</a></li>
+                <li><a href="" target="_blank">链接3</a></li>
+            </ul>
+        </div>
+        <div class="copy-right"><br>版权所有<br>2015-2016</div>
+    </div>
+    
+<!-- </footer> -->
 </div>
     <!-- 另一种分页显示方式 -->
     <!-- <p>
@@ -161,7 +190,7 @@
 <!--回到顶部/意见反馈-->
 <div id="backTotop">
     <div id="top" data-toggle="tooltip" data-placement="left" title="回到顶部">
-      <a href="javascript:;" class="goTotop" onclick="backToTop()">
+      <a href="javascript:;">
         <div class="arrow"></div>
         <div class="stick"></div>
       </a>
@@ -188,7 +217,7 @@
     </ul>
 </div> -->
 
-{% include "footer_item.html" %}
+
 </body>
 
 </html>

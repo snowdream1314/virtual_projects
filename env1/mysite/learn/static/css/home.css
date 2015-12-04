@@ -84,14 +84,15 @@ input{border:0;padding:0}
     top: 70px;  /*与header之间空10px*/
    /*  bottom: 60px; */
     height: auto;   /*高度随着内容变化*/
-    width: 1212px;
-    margin: 0 0 300px 0; /*离开浏览器窗口底部距离300px,,留出footer空间*/
+    width: /* 1212px */;
+    width: 100%;    /*为让footer铺满并且跟随滚动条*/
+    /* margin: 0 0 300px 0; */ /*离开浏览器窗口底部距离300px,,留出footer空间*/
 }
 /*------------------------统计条目数----------------------*/
 .nums {  
     height: 42px;
     width: 538px;
-    padding: 0 0 0 150px;   /*偏移窗口左侧距离*/
+    padding: 0 0 0 10%;   /*偏移窗口左侧距离*/
     margin: 32px 0 10px 0;
     font: bold 10px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
     color: #CCC;
@@ -108,7 +109,7 @@ input{border:0;padding:0}
 /*------------------------右侧推荐----------------------*/
 .content_right {
     position:absolute;
-    right:0;
+    right:30%;
     top: 104px;  /*相对于#container定位*/
     padding: 0 0 0 10px;
     border-left: 1px solid #CCC; /*边框*/
@@ -119,7 +120,7 @@ input{border:0;padding:0}
     position: relative;
     width: 549px;
     height: auto;
-    padding: 0 0 0 150px;   /*偏移窗口左侧距离*/
+    padding: 0 0 0 10%;   /*偏移窗口左侧距离*/
 }
 
 li.itemList {
@@ -171,21 +172,38 @@ li.itemList {
     position: relative;
     height: 19px;
     margin: 20px 0 20px 0;
+    color: #999;
+}
+.lable a {
+    color: #999;
+    text-decoration: none;
 }
 .itemTime {
     float: right;
 }
 
 .itemDetail {
+    position:relative;
     height: 96px;
     width: 500px;
     font: normal 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
+}
+.itemDetail p {
+    display:block;
+    height:96px;
+/*     width:500px; */
+/*     line-height: 20px; */
+    margin-bottom: 5px;
     overflow:hidden; /*超出范围隐藏*/
     text-overflow:ellipsis; /*超出范围显示省略号*/
 }
 .itemBuy {
-    margin: 20px 0 20px 0;
+    padding-top: 10px;
+    margin: auto;
     
+}
+.itemBuy a {
+    text-decoration: none;
 }
 .buyPart{
     position: relative;
@@ -257,27 +275,27 @@ th {
 /*------------------------------------------返回顶部按钮------------------------------------*/
 #backTotop {
     position: fixed;
-    right: 100px;
-    display: block;
-    
+    right: 5%;      /*距离窗口右侧位置*/
+    bottom: 0;   /*距离窗口底部位置*/
+    display: none;
+    z-index: 999;
 }
 #top {
-	position: fixed;
+	position: relative;
 	/* right: 25px; */
     /* left: 1450px; */       /*相对于浏览器窗口左侧*/
-	bottom: 360px;      /*相对于浏览器窗口底部*/
+	/* bottom: 60px; */      /*相对于浏览器窗口底部*/
 	width: 60px;
 	height: 60px;
 	/* background-color: #bbb; */
     background-color: #FFF;
     border: 1px solid #ddd;
+    border-bottom: none;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 	border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 	/* opacity: 0.8; */
-	display: block;
-	z-index: 999;
 }
 #top .arrow{    /*制作三角形*/
 	margin:0 auto;
@@ -303,10 +321,10 @@ th {
 } */
 
 #suggest {
-    position: fixed;
+    position: relative;
 	/* right: 25px; */
     /* left: 1450px;  */      /*相对于浏览器窗口左侧*/
-	bottom: 300px;      /*相对于浏览器窗口底部*/
+	/* bottom: 380px; */      /*相对于浏览器窗口底部*/
 	width: 60px;
 	height: 60px;
     font-size: 25px;
@@ -320,8 +338,6 @@ th {
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
 	/* opacity: 0.8; */
-	display: block;
-	z-index: 999;
     
 }
 #suggest a {    
@@ -336,42 +352,67 @@ th {
 
 /*------------------------------------------网页footer部分----------------------------------*/ 
 #footer {
-    position: relative;
+  /*   position: relative;
+    bottom: 100px;
     height: 300px;
     width:100%;
-    background-color: #333;
+    margin: 0 auto;
+    padding:40px 0;
+    background-color: #333; */
 }
 .footer {
     position: relative;
-    left: 150px;
+    height: 300px;
+    width:100%;
+    margin: 0 auto;
+    padding:40px 0 40px 10%;
+    background-color: #333;
 }
 .footer a {
     font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
-    color: #CCC;
+    color: #ccc;
     text-decoration: none;
 }
+.footer a:hover {
+    color: #fff;
+}
 .footer-top {
-    margin: 40px 0 20px 0;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
 }
 .footer-top a {
-    margin: 0 50px 0 0;
+    padding-right: 30px;
+    color: #ccc;
 }
 .friendly-link {
-    margin: 50px 0 50px 0;
+    margin-bottom: 40px;
 }
 .link-title {
-    margin: 20px 0 15px 0;
-    font: bold 13px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
-    color: #FFF;
+    margin-bottom: 10px;
+    font: bold 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
+    color: #999;
 }
 .friendly-link ul li {
-    float: left;
-    margin: 0 50px 20px 0;
+    /* float: left; */
+    margin-left: 0;
+    display: inline;
+}
+.friendly-link ul li a {
+    padding-right: 30px;
+    line-height: 24px;
+    display: inline-block;
+    color: #999;
+}
+.friendly-link ul li a:hover {
+    color: #fff;
+}
+.friendly-link a {
+    color: #999;
 }
 .copy-right {
     margin: auto;
     font: bold 12px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/
-    color: #CCC;
+    color: #999;
 }
 /*------------------------------------------网页footer部分----------------------------------*/ 
 
