@@ -49,8 +49,6 @@ function backToTop() {
     //滚页面才显示返回顶部
     $(window).scroll(function() {
         if ($(window).scrollTop() > 100) {
-           /* alert('检测到滚动') */
-            /* $("#backTotop").animate({display: "block"}); */
             $("#backTotop").fadeIn(500);
         } else {
             $("#backTotop").fadeOut(500);
