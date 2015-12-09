@@ -9,14 +9,16 @@ $(document).ready(function() {
 
 /*搜索按钮点击事件*/
 function jump(){
-    alert('请输入搜索内容');
+    /* alert('请输入搜索内容'); */
     var val=document.getElementById('search_input').value;
-    if (val==''|| val=='\n'){
+    if (val==''){
         alert('请输入搜索内容');
+        /* window.location.href="http://127.0.0.1:8000； */
+        $("#form").animate({action:"/"});
         return false;
     } 
-    window.location.href="http://127.0.0.1:8000/show/";
-    document.getElementById('search_input').value = val;
+    /* window.location.href="http://127.0.0.1:8000/show/";
+    document.getElementById('search_input').value = val; */
     return false;
 }
 
@@ -34,13 +36,15 @@ function Entpress(evt){
     keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
     if (event.keyCode==13){
         var val=document.getElementById('search_input').value;
-        if (val==''||val=='\n'){
+        if (val==''){
             alert('请输入搜索内容');
+            /* window.location.href="http://127.0.0.1:8000； */
+            $("#form").animate({action:"/"});
             return false;
         } 
         /* document.getElementById('search_btn').onclick(); */
-        window.location.href="http://127.0.0.1:8000/show/";      /*跳转链接*/
-        document.getElementById('search_input').value = val;
+        /* window.location.href="http://127.0.0.1:8000/show/";      /*跳转链接*/
+        document.getElementById('search_input').value = val; */
         return false;
     }
 }
