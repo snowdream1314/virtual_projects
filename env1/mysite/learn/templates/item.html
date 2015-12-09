@@ -92,17 +92,17 @@
         <!-- 使用django的paginator实现分页显示方式 -->
         <div id="page">
         {% if items.has_previous %}
-            <a href="?text={{ value }}/page={{ items.previous_page_number }}" class="n"><上一页</a>
+            <a href="?text={{ value }}&page={{ items.previous_page_number }}" class="n"><上一页</a>
         {% endif %}
         {% for page_number in page_range %}
         {% ifequal page_number  items.number %}
-            <a href="?text={{ value }}/page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="active">{{ page_number }}</span></a>
+            <a href="?text={{ value }}&page={{ page_number }}" class="active" title="pre"><span class="fk"><i class="icon-bear-pn"></i></span><span class="active">{{ page_number }}</span></a>
         {% else %}
-            <a href="?text={{ value }}/page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
+            <a href="?text={{ value }}&page={{ page_number }}" title="第{{ page_number }}页"><span class="pc">{{ page_number }}</span></a>
         {% endifequal %}
         {% endfor %}
         {% if items.has_next %}
-            <a href="?text={{ value }}/page={{ items.next_page_number }}" class="n" title="Next">下一页></a>
+            <a href="?text={{ value }}&page={{ items.next_page_number }}" class="n" title="Next">下一页></a>
         {% endif %}  
             <b>{%if items.paginator.num_pages%}共 {{ items.paginator.num_pages }} 页{%endif%}</b>
         </div>

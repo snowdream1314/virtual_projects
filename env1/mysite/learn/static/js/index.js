@@ -9,8 +9,9 @@ $(document).ready(function() {
 
 /*搜索按钮点击事件*/
 function jump(){
+    alert('请输入搜索内容');
     var val=document.getElementById('search_input').value;
-    if (val==''){
+    if (val==''|| val=='\n'){
         alert('请输入搜索内容');
         return false;
     } 
@@ -33,7 +34,7 @@ function Entpress(evt){
     keyCode = evt.keyCode ? evt.keyCode : (evt.which ? evt.which : evt.charCode);
     if (event.keyCode==13){
         var val=document.getElementById('search_input').value;
-        if (val==''){
+        if (val==''||val=='\n'){
             alert('请输入搜索内容');
             return false;
         } 
@@ -68,9 +69,9 @@ function backToTop() {
 }
 
 /*------------------加载图片----------------*/
-function addImg(){
+/* function addImg(){
     var
-}
+} */
 /*-------------------热词------------------*/
 
 var hotWords = [{name:"value1"},{name:"value2"},{name:"value3"}];

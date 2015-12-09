@@ -10,7 +10,7 @@
         <li><a href="#">Home</a></li>
         <li class="input_ls">
             <span class="item_input">
-               <span class="ipt_wr"><input type="text" id="search_input" class="ipt" autocomplete="off"  onkeydown="return Entpress(event);" /></span><span class="btn_wr"><input id="search_btn" class="btn" type="button" value='百度一下' onclick=javascript:jump() /></span>
+               <form id="form" action="/show" class="fm"><span class="ipt_wr"><input type="text" name="text" id="search_input" class="ipt" autocomplete="off"  onkeydown="return Entpress(event);" /></span><span class="btn_wr"><input id="search_btn" class="btn" type="submit" value='百度一下' onclick="jump();" /></span></form>
             </span>
         </li>
         <li><a href="#">Work</a></li>

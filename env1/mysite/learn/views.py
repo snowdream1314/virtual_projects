@@ -12,9 +12,10 @@ from django.http import HttpResponse
 from django.shortcuts import render, render_to_response
 from django.template.context import RequestContext
 
-# from learn.models import smzdm_fx
 from learn.models import smzdm_fx_item
 
+
+# from learn.models import smzdm_fx
 # Create your views here.
 # def index(request):
 #     return HttpResponse(u'你好，世界')
@@ -37,7 +38,9 @@ def show(request):
     #使用paginator实现分页
     limit = 5  #限制每页显示的记录数
     value = request.GET.get('text')
-    items = smzdm_fx_item.objects(name__icontains=value).limit(30)
+#     search = {""__raw__"" : {""name"":{""in"":map(re.compile,value.split('+'))}}}
+    items = smzdm_fx_item.objects(name__icontains=value).limit(30).order_by('_fav_count')
+#     items = smzdm_fx_item.objects(**search).limit(30)
     paginator = Paginator(items, limit) #实例化一个分页对象
     try:
         page = int(request.GET.get("page",1))
