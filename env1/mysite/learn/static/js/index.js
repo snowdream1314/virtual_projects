@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
     backToTop();
+    loadMorePage();
 });
 
 /*---------------------*/
@@ -76,6 +77,30 @@ function backToTop() {
 /* function addImg(){
     var
 } */
+
+/*-------------------滚动到底部加载更多------------------*/
+/* function loadMorePage(){
+    alert('do loadMorePage') */
+    $(window).scroll(function(){
+        totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+        if ($(document).height() <=totalheight) {
+            var url_now = window.location.search;
+            var page = 1;
+            if url_now.match("&"){
+                page = parseInt(url_now.split('=')[-1]);
+                page = page + 1;
+                url = url_now.split('&')[0] + "page=" + page;
+            }
+            else {
+                page = page + 1;
+                url = url_now.split('&')[0] + "page=" + page; 
+            }
+            var param = {}; // 组装发送参数
+            param['name']  = $('form input[name=name]').val();
+            $.get(url, param,  function(dom) { $('div.content_left').append(dom) });
+        }
+    });
+/* } */
 /*-------------------热词------------------*/
 
 var hotWords = [{name:"value1"},{name:"value2"},{name:"value3"}];
