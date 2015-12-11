@@ -127,13 +127,16 @@ li.itemList {
     position: relative;
     height: 260px;    /*高度不能固定死，否则容易重叠*/
     width: 710px;
-    margin: 15px 0 15px 0;
-    padding: 0 0 15px 0;    /*条目之间距离*/
+    padding-bottom: 29px;
+    margin-bottom: 4px;
+    margin-top: 24px;
     border-bottom: 1px solid #CCC; /*边框*/
 }
 .itemName {     /*标题*/
     position: relative;
-    height: 20px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
     width: 710px;
     white-space: nowrap; /*禁止换行*/
     overflow:hidden; /*超出范围隐藏*/
@@ -146,20 +149,25 @@ li.itemList {
     margin: 0;
     font: bold 18px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
 }
-
-.img {      /*图片*/
-    
+.image-pic-left {
     width: 190px;
-    /* height: 190px; */
+    height: 190px;
     float: left;
-    padding: 0 15px 0 0;    /*把图片推离文字*/
+    margin-right: 20px;     /*图片推离文字*/
+    text-align: center;
+    display: block;
+    overflow: hidden;   /*限制图片显示的大小*/
+}
+.img {      /*图片*/
+    border: 0;
 }
 
 .itemRight {
     position: relative;
     height: 190px;
-    width: 430px;
-    margin: auto;   /*实现左对齐*/
+    width: 500px;
+    float: left;
+    /* margin: auto; */   /*实现左对齐*/
 }
 .price {
     height: 24px;
@@ -184,27 +192,23 @@ li.itemList {
 
 .itemDetail {
     position:relative;
-    height: 96px;
+   /*  height: 96px; */
     width: 500px;
+    margin-bottom: 24px;
+    line-height: 24px;
+    color: #666;
+    overflow:hidden; /*超出范围隐藏*/    
+    text-overflow:ellipsis; /*超出范围显示省略号*/
     font: normal 14px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
 }
-.itemDetail p {
-    display:block;
-    height:96px;
-/*     width:500px; */
-/*     line-height: 20px; */
-    margin-bottom: 5px;
-    text-decoration: none;
-    overflow:hidden; /*超出范围隐藏*/
-    text-overflow:ellipsis; /*超出范围显示省略号*/
-}
+
 .itemDetail a {
     text-decoration: none;
 }
 .itemBuy {
-    padding-top: 15px;
-    margin: auto;
-    
+    height: 30px;
+    width: 100%;
+    font-size: 12px;   
 }
 .itemBuy a {
     letter-spacing: 1px;

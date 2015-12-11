@@ -19,7 +19,7 @@
                 <!-- <a class="located" href="">国内</a> -->
                 <h3 class="itemName"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></h3>
             </div>
-            <a title="{{ item.name }}" class="image-pic-left" target="_blank" href="{{ item.href }}"><img src="{{ item.image}}" class="img"></img></a>
+            <a title="{{ item.name }}" class="image-pic-left" target="_blank" href="{{ item.href }}"><img src="{{ item.image}}" class="img"></a>
             <div class="itemRight">
                 <span class="price">{{ item.price }}</span>
                 <div class="lable">
@@ -29,11 +29,11 @@
                 <div class="itemDetail">
                     
                 {% if item.baoliao_content %}
-                    <p>{{ item.baoliao_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
+                    <a href="{{ item.href }}">{{ item.originmall }}</a>{{ item.baoliao_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a>
                 {% elif item.item_description%}
-                    <p>{{ item.item_description }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
+                    <a href="{{ item.href }}">{{ item.originmall }}</a>{{ item.item_description }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a>
                 {% else %}
-                    <p>{{ item.youhui_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a></p>
+                    <a href="{{ item.href }}">{{ item.originmall }}</a>{{ item.youhui_content }} <a href="{{ item.article_url }}" target="_blank" class="detail">详情</a>
                 {% endif %}
                    
                 </div>
