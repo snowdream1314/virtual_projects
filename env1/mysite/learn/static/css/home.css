@@ -127,7 +127,7 @@ li.itemList {
     position: relative;
     height: 260px;    /*高度不能固定死，否则容易重叠*/
     width: 710px;
-    padding-bottom: 29px;
+    padding-bottom: 20px;
     margin-bottom: 4px;
     margin-top: 24px;
     border-bottom: 1px solid #CCC; /*边框*/
@@ -138,16 +138,17 @@ li.itemList {
     font-weight: normal;
     line-height: 30px;
     width: 710px;
-    white-space: nowrap; /*禁止换行*/
+    /* white-space: nowrap; */ /*禁止换行*/
     overflow:hidden; /*超出范围隐藏*/
     text-overflow:ellipsis; /*超出范围显示省略号*/
 }
 .itemName a {    /*标题文字*/
-    height: 17px;
+    /* height: 17px; */
     width: 483px;
     padding: 0;
     margin: 0;
-    font: bold 18px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
+    text-decoration: none;
+    font: bold 20px Arial, Helvetica;   /*字体样式：粗细、大小、字体风格*/ 
 }
 .image-pic-left {
     width: 190px;
@@ -178,8 +179,10 @@ li.itemList {
 
 .lable{
     position: relative;
-    height: 19px;
-    margin: 20px 0 20px 0;
+    height: 15px;
+    font-size: 13px;
+    margin-top: 9px;
+    margin-bottom: 16px;
     color: #999;
 }
 .lable a {
@@ -192,7 +195,7 @@ li.itemList {
 
 .itemDetail {
     position:relative;
-   /*  height: 96px; */
+    height: 96px;
     width: 500px;
     margin-bottom: 24px;
     line-height: 24px;

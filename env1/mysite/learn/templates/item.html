@@ -17,11 +17,13 @@
         <li class="itemList" id="{{ item.itemid }}" time="{{ item.updatetime }}">
             <div class="itemTitle">
                 <!-- <a class="located" href="">国内</a> -->
-                <h3 class="itemName"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a></h3>
+                <h3 class="itemName"><a href="{{ item.href}}" target="_blank">{{ item.name }}</a>
+                    <span class="price">{{ item.price }}</span>
+                </h3>
             </div>
             <a title="{{ item.name }}" class="image-pic-left" target="_blank" href="{{ item.href }}"><img src="{{ item.image}}" class="img"></a>
             <div class="itemRight">
-                <span class="price">{{ item.price }}</span>
+                
                 <div class="lable">
                     <span class="itemTab"><a href="">分类</a></span>
                     <span class="itemTime">{{ item.article_time }}</span>
