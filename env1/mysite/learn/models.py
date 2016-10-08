@@ -6,7 +6,7 @@ from mysite.settings import DBNAME
 
 # from mongoengine import connect
 # Create your models here.
-connect('smzdm', host='localhost', port=27017)
+connect('smzdm_fx_item', host='localhost', port=27017)
 
 # class smzdm_fx(Document):
 #     itemid = Item.itemid
@@ -35,7 +35,7 @@ class smzdm_fx_item(Document):
     updatetime = IntField()
     bad_count = IntField()
     originmall = StringField()
-    originmallurl = StringField()
+    # originmallurl = StringField()
     comment_count = IntField()
     good_count = IntField()
     fav_count = IntField()

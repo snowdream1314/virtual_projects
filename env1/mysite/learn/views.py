@@ -39,7 +39,7 @@ def show(request):
     limit = 10  #限制每页显示的记录数
     value = request.GET.get('text')
 #     search = {""__raw__"" : {""name"":{""in"":map(re.compile,value.split('+'))}}}
-    items = smzdm_fx_item.objects(name__icontains=value).limit(30).order_by('_fav_count')
+    items = smzdm_fx_item.objects.filter(name__contains=value).limit(30).order_by('_fav_count')
 #     items = smzdm_fx_item.objects(**search).limit(30)
     paginator = Paginator(items, limit) #实例化一个分页对象
     try:
